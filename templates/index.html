@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+	<form action="/" method="post">
+		<input type="text" name="input1" placeholder="Enter meters" required>
+		<input type="text" name="input2" placeholder="Enter George meters" required>
+		<input type="text" name="input3" placeholder="Enter Gergana meters" required>
+		<input type="text" name="input4" placeholder="Enter check meters" required>
+		<input type="submit">
+	</form>
+	<p>Meters: {{meters}}</p>
+	<p>George: {{george}}</p>
+	<p>Gergana: {{gergana}}</p>
+	<p>Distance: {{distance}}</p>
+	<p>Answer: {{answer}}</p>
+	{% if array %}
+	{% for arr in array %}
+	{% if arr %}
+	<h1 style="color:red;display:inline">-   </h1>
+	{% else %}
+	<h1 style="color:blue;display:inline">-   </h1>
+	{% endif %}
+	{% endfor %}
+	{% endif %}
+</body>
+</html>
