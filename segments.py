@@ -1,6 +1,8 @@
 def points(n, a, b, c):
 	arrStart = find_points(n, a, True)
 	arrEnd = find_points(n, b, False)
+	print(arrStart)
+	print(arrEnd)
 	return find_parts(arrStart, arrEnd, c, n)
 	
 
@@ -26,12 +28,14 @@ def find_parts(arr1, arr2, distance, length):
 	for m in arr2:
 		basearr.append(m)
 	basearr.sort()
+	basearr = set(basearr)
+	basearr = list(basearr)
 	for i in range(len(basearr) - 1):
-		if(abs(basearr[i] - basearr[i + 1]) == distance):
-			length -= distance
+		for j in range(i, len(basearr)):
+			if(abs(basearr[i] - basearr[j]) == distance):
+				length -= distance
 	return length
 
 if __name__ == '__main__':
 	inputs = map(int, input().split())
 	print(points(*inputs))
-	
